@@ -1,6 +1,7 @@
 def main():
     # Data Starts
     ingredients = ['Coriander', 'Tomatoes', 'Onions']
+    food = {}
     # Data Ends
     while True:
         # Menu Starts
@@ -12,13 +13,14 @@ def main():
         # Menu Response Processing Starts
         if menu_res == 1: # Add ingredients
             numtoadd = int(input(f'{"-"*70}\nHow many ingredients would you like to add today? (1, 2 etc)\nAns: '))
-
             for i in range(numtoadd):
                 itemtoadd = input('What would you like to add?\nAns: ').title()
                 ingredients.append(itemtoadd)
-                print(ingredients)
         elif menu_res == 2: # Remove ingredients
-            None
+            numtoremove = int(input(f'{"-"*70}\nHow many ingredients would you like to remove today? (1, 2 etc)\nAns: '))
+            for i in range(numtoremove):
+                itemtoremove = input('What would you like to remove?\nAns: ').title()
+                ingredients.remove(itemtoremove)
         elif menu_res == 3:
             None
         elif menu_res == 4: # View ingredients
